@@ -6,12 +6,12 @@ import android.widget.Button
 import android.widget.ImageView
 //import android.widget.TextView
 import android.widget.Toast
-import java.util.*
+import java.util.Random
 
 class MainActivity : AppCompatActivity() {
 
     // lateinit promisse android that the variable will be initialized before we get any operations on it (will not be null)
-    lateinit var diceImage: ImageView
+    private lateinit var diceImage: ImageView
 
     // In android we don't write code in the construct. It is not inflated before the setContentView method.
 
@@ -31,8 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun rollDice() {
         // random number between 0 and 5 (+1 to turn it into 1 and 6)
-        var randomInt = Random().nextInt(6) + 1
-        val drawableResource = when (randomInt) {
+        val drawableResource = when (Random().nextInt(6) + 1) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
